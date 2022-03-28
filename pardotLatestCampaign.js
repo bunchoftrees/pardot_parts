@@ -2,6 +2,8 @@
 This script is a helper to parsing and setting campaign values.
 
 Set the variables defaultLatestCampaign to best use this script
+
+REMOVE ALL COMMENTS BEFORE PUTTING INTO PROD!
 */
 
 // Replace this value with desired default campaign ID
