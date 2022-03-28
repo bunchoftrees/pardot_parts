@@ -15,8 +15,8 @@ var term = getParameterByName('utm_term');
 var gclid = getParameterByName('gclid');
 var latestCampaign = getParameterByName('Latest_Campaign');
 
-// Check for valid 18-char SF ID
-function testSalesforceId(checkId) {
+// Check for valid 18-char SF ID format
+function testCampaignId(checkId) {
     if (checkId.length == 18) {
         var regexId = new RegExp(/^701[a-zA-Z0-9]{15}/gi);
         return regexId.test(checkId);
@@ -24,15 +24,21 @@ function testSalesforceId(checkId) {
     return false;
 }
 
-if (!testSalesforceId(latestCampaign)) {
+if (!testCampaignId(latestCampaign)) {
     // Populates default campaign ID when ID is excluded/malformed
+
+    // Replace this value with desired default campaign ID
     latestCampaign = '7014V000002hO2lQAF';
+    // Replace this value with desired default campaign name
     campaign = 'C-2022-HealthStream.com Traffic - Care Settings Form';
+    
+    // Sets hidden fields with default values
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = campaign;
     // console.log("ID was incorrect, default used: " + latestCampaign);
     // console.log("ID was incorrect, default used: " + campaign);
 } else {
+    // Sets hidden fields with found/validated values
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = campaign;
     // console.log("ID was correct, value stored: " + latestCampaign);
