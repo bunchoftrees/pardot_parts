@@ -7,7 +7,6 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 // Give the URL parameters variable names
-var testString = "Set: ";
 var source = getParameterByName('utm_source');
 var medium = getParameterByName('utm_medium');
 var campaign = getParameterByName('utm_campaign');
@@ -24,7 +23,7 @@ function testCampaignId(checkId) {
     return false;
 }
 
-if (!testCampaignId(latestCampaign)) {
+if (!testCampaignId(latestCampaign) && !campaign) {
     // Populates default campaign ID when ID is excluded/malformed
 
     // Replace this value with desired default campaign ID
@@ -48,12 +47,15 @@ if (!testCampaignId(latestCampaign)) {
 if (source) {
     document.querySelector("#pardot-form > div.form-field.utm_source.pd-hidden.hidden input").value = source;
 }
+
 if (medium) {
     document.querySelector("#pardot-form > div.form-field.utm_medium.pd-hidden.hidden input").value = medium;
 }
+
 if (term) {
     document.querySelector("#pardot-form > div.form-field.utm_term.pd-hidden.hidden input").value = term;
 }
+
 if (gclid) {
     document.querySelector("#pardot-form > div.form-field.gclid.pd-hidden.hidden input").value = gclid;
 }
