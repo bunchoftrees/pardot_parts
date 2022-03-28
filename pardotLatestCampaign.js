@@ -45,7 +45,7 @@ if (!testCampaignId(latestCampaign) && !campaign) {
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = defaultCampaignName;
     // console.log("ID was correct, value stored: " + latestCampaign);
-    // console.log("ID was correct, value stored: " + defaultCampaignN);
+    // console.log("ID was correct, value stored: " + defaultCampaignName);
 } else {
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = campaign;
