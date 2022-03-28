@@ -59,6 +59,7 @@ if (term) {
 if (gclid) {
     document.querySelector("#pardot-form > div.form-field.gclid.pd-hidden.hidden input").value = gclid;
 }
+
 if (campaign) {
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = campaign;
 }
