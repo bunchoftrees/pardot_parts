@@ -51,7 +51,6 @@ if (source) {
 if (medium) {
     document.querySelector("#pardot-form > div.form-field.utm_medium.pd-hidden.hidden input").value = medium;
 }
-
 if (term) {
     document.querySelector("#pardot-form > div.form-field.utm_term.pd-hidden.hidden input").value = term;
 }
