@@ -38,19 +38,19 @@ if (!testCampaignId(latestCampaign)) {
     // Sets hidden fields with default values
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = defaultLatestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = defaultCampaignName;
-    console.log("ID was incorrect, default used: " + defaultLatestCampaign);
-    console.log("ID was incorrect, default used: " + defaultCampaignName);
+    // console.log("ID was incorrect, default used: " + defaultLatestCampaign);
+    // console.log("ID was incorrect, default used: " + defaultCampaignName);
 } else if (testCampaignId(latestCampaign) && !campaign) {
     // Sets hidden fields with found/validated value for latestCampaign and defaultCampaignName if campaign is null
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = defaultCampaignName;
-    console.log("ID was correct, value stored: " + latestCampaign);
-    console.log("ID was incorrect, default used: " + defaultCampaignName);
+    // console.log("ID was correct, value stored: " + latestCampaign);
+    // console.log("ID was incorrect, default used: " + defaultCampaignName);
 } else {
     document.querySelector("#pardot-form > div.form-field.Latest_Campaign.pd-hidden.hidden input").value = latestCampaign;
     document.querySelector("#pardot-form > div.form-field.utm_campaign.pd-hidden.hidden input").value = campaign;
-    console.log("ID was correct, value stored: " + latestCampaign);
-    console.log("ID was correct, value stored: " + campaign);
+    // console.log("ID was correct, value stored: " + latestCampaign);
+    // console.log("ID was correct, value stored: " + campaign);
 }
 
 if (source) {
